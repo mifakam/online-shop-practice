@@ -13,9 +13,22 @@ const products = [
 const Controls = (props) => {
   return (
     <div className="controls">
+      <div className="price">
+        <p>Total Price: {props.price}</p>
+      </div>
       {products.map((item) => {
-        return <Builder key={item.title} title={item.title} />;
+        return (
+          <Builder
+            key={item.title}
+            title={item.title}
+            add={() => props.productAdd(item.type)}
+            remove={() => props.productRemove(item.type)}
+          />
+        );
       })}
+      <button className="orderBtn" onClick={props.order}>
+        Order
+      </button>
     </div>
   );
 };

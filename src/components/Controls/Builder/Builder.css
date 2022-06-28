@@ -7,7 +7,7 @@
 
 .builder button {
   display: block;
-  font-family: inherit;
+  font: inherit;
   padding: 5px;
   margin: 0 12px;
   width: 80px;
